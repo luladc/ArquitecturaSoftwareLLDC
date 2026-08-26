@@ -1,0 +1,132 @@
+@startuml
+abstract class bo.edu.usfx.biblioteca.ejercicio2.Reserva
+abstract class bo.edu.usfx.biblioteca.legado.MaterialBiblioteca
+annotation java.lang.Override
+class bo.edu.usfx.biblioteca.Main
+class bo.edu.usfx.biblioteca.aplicacion.ServicioPrestamo
+class bo.edu.usfx.biblioteca.dominio.CatalogoPoliticas
+class bo.edu.usfx.biblioteca.dominio.Material
+class bo.edu.usfx.biblioteca.dominio.PoliticaEstudiante
+class bo.edu.usfx.biblioteca.ejercicio1.SistemaSanciones
+class bo.edu.usfx.biblioteca.ejercicio2.ReservaAuditorio
+class bo.edu.usfx.biblioteca.ejercicio2.ReservaIndividual
+class bo.edu.usfx.biblioteca.ejercicio2.ReservaSalaGrupal
+class bo.edu.usfx.biblioteca.ejercicio2.ServicioReservasBiblioteca
+class bo.edu.usfx.biblioteca.infraestructura.NotificadorSmtp
+class bo.edu.usfx.biblioteca.infraestructura.RepositorioPrestamosJdbc
+class bo.edu.usfx.biblioteca.legado.CatalogoBiblioteca
+class bo.edu.usfx.biblioteca.legado.ConexionMySQL
+class bo.edu.usfx.biblioteca.legado.EjemplarDigital
+class bo.edu.usfx.biblioteca.legado.EjemplarFisico
+class bo.edu.usfx.biblioteca.legado.GestorBiblioteca
+class bo.edu.usfx.biblioteca.legado.Libro
+class bo.edu.usfx.biblioteca.legado.LibroGeneral
+class bo.edu.usfx.biblioteca.legado.LibroReferencia
+class bo.edu.usfx.biblioteca.legado.Prestamo
+class bo.edu.usfx.biblioteca.legado.Revista
+class bo.edu.usfx.biblioteca.legado.ServidorCorreoSMTP
+class bo.edu.usfx.biblioteca.legado.Usuario
+class bo.edu.usfx.biblioteca.presentacion.ComprobantePrestamo
+class bo.edu.usfx.biblioteca.presentacion.ReportePrestamosCsv
+class java.math.BigDecimal
+class java.time.LocalDate
+class java.time.LocalDateTime
+class java.time.temporal.ChronoUnit
+class java.util.ArrayList
+class java.util.HashMap
+class java.util.List
+class java.util.Map
+interface bo.edu.usfx.biblioteca.dominio.Material permits LibroGeneral, Revista, LibroReferencia
+interface bo.edu.usfx.biblioteca.dominio.Notificador
+interface bo.edu.usfx.biblioteca.dominio.PoliticaPrestamo
+interface bo.edu.usfx.biblioteca.dominio.Prestable
+interface bo.edu.usfx.biblioteca.dominio.Renovable
+interface bo.edu.usfx.biblioteca.dominio.RepositorioPrestamos
+interface bo.edu.usfx.biblioteca.dominio.roles.Descargable
+interface bo.edu.usfx.biblioteca.dominio.roles.Distribuible
+interface bo.edu.usfx.biblioteca.dominio.roles.Prestable
+interface bo.edu.usfx.biblioteca.dominio.roles.Renovable
+interface bo.edu.usfx.biblioteca.dominio.roles.Reservable
+interface bo.edu.usfx.biblioteca.dominio.roles.Restaurable
+interface bo.edu.usfx.biblioteca.ejercicio2.ServicioReservas
+interface bo.edu.usfx.biblioteca.legado.Descargable
+interface bo.edu.usfx.biblioteca.legado.Distribuible
+interface bo.edu.usfx.biblioteca.legado.OperacionesBiblioteca
+interface bo.edu.usfx.biblioteca.legado.Prestable
+interface bo.edu.usfx.biblioteca.legado.Renovable
+interface bo.edu.usfx.biblioteca.legado.Reservable
+interface bo.edu.usfx.biblioteca.legado.Restaurable
+bo.edu.usfx.biblioteca.ejercicio2.Reserva ..> java.time.LocalDateTime
+bo.edu.usfx.biblioteca.legado.MaterialBiblioteca ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.Main ..> bo.edu.usfx.biblioteca.legado.GestorBiblioteca
+bo.edu.usfx.biblioteca.Main ..> bo.edu.usfx.biblioteca.legado.Libro
+bo.edu.usfx.biblioteca.Main ..> bo.edu.usfx.biblioteca.legado.Prestamo
+bo.edu.usfx.biblioteca.Main ..> bo.edu.usfx.biblioteca.legado.Usuario
+bo.edu.usfx.biblioteca.Main ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.aplicacion.ServicioPrestamo ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.dominio.CatalogoPoliticas ..> bo.edu.usfx.biblioteca.legado.Usuario
+bo.edu.usfx.biblioteca.dominio.CatalogoPoliticas ..> java.util.List
+bo.edu.usfx.biblioteca.dominio.PoliticaEstudiante ..> bo.edu.usfx.biblioteca.legado.Usuario
+bo.edu.usfx.biblioteca.dominio.PoliticaEstudiante ..> java.math.BigDecimal
+bo.edu.usfx.biblioteca.dominio.PoliticaEstudiante --|> bo.edu.usfx.biblioteca.dominio.PoliticaPrestamo
+bo.edu.usfx.biblioteca.ejercicio1.SistemaSanciones ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.ejercicio1.SistemaSanciones ..> java.util.ArrayList
+bo.edu.usfx.biblioteca.ejercicio1.SistemaSanciones ..> java.util.List
+bo.edu.usfx.biblioteca.ejercicio2.ReservaAuditorio --|> bo.edu.usfx.biblioteca.ejercicio2.Reserva
+bo.edu.usfx.biblioteca.ejercicio2.ReservaAuditorio ..> java.lang.Override
+bo.edu.usfx.biblioteca.ejercicio2.ReservaAuditorio ..> java.time.LocalDateTime
+bo.edu.usfx.biblioteca.ejercicio2.ReservaIndividual --|> bo.edu.usfx.biblioteca.ejercicio2.Reserva
+bo.edu.usfx.biblioteca.ejercicio2.ReservaIndividual ..> java.lang.Override
+bo.edu.usfx.biblioteca.ejercicio2.ReservaIndividual ..> java.time.LocalDateTime
+bo.edu.usfx.biblioteca.ejercicio2.ReservaSalaGrupal --|> bo.edu.usfx.biblioteca.ejercicio2.Reserva
+bo.edu.usfx.biblioteca.ejercicio2.ReservaSalaGrupal ..> java.lang.Override
+bo.edu.usfx.biblioteca.ejercicio2.ReservaSalaGrupal ..> java.time.LocalDateTime
+bo.edu.usfx.biblioteca.ejercicio2.ServicioReservasBiblioteca ..> java.lang.Override
+bo.edu.usfx.biblioteca.ejercicio2.ServicioReservasBiblioteca ..> java.util.HashMap
+bo.edu.usfx.biblioteca.ejercicio2.ServicioReservasBiblioteca ..> java.util.Map
+bo.edu.usfx.biblioteca.ejercicio2.ServicioReservasBiblioteca --|> bo.edu.usfx.biblioteca.ejercicio2.ServicioReservas
+bo.edu.usfx.biblioteca.legado.CatalogoBiblioteca ..> bo.edu.usfx.biblioteca.dominio.Material
+bo.edu.usfx.biblioteca.legado.CatalogoBiblioteca ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.legado.CatalogoBiblioteca ..> java.util.ArrayList
+bo.edu.usfx.biblioteca.legado.CatalogoBiblioteca ..> java.util.List
+bo.edu.usfx.biblioteca.legado.CatalogoBiblioteca ..> bo.edu.usfx.biblioteca.dominio.Prestable
+bo.edu.usfx.biblioteca.legado.ConexionMySQL ..> java.util.ArrayList
+bo.edu.usfx.biblioteca.legado.ConexionMySQL ..> java.util.List
+bo.edu.usfx.biblioteca.legado.EjemplarDigital ..> java.lang.Override
+bo.edu.usfx.biblioteca.legado.EjemplarDigital --|> bo.edu.usfx.biblioteca.legado.Descargable
+bo.edu.usfx.biblioteca.legado.EjemplarDigital --|> bo.edu.usfx.biblioteca.legado.Distribuible
+bo.edu.usfx.biblioteca.legado.EjemplarDigital --|> bo.edu.usfx.biblioteca.legado.Prestable
+bo.edu.usfx.biblioteca.legado.EjemplarFisico ..> java.lang.Override
+bo.edu.usfx.biblioteca.legado.EjemplarFisico --|> bo.edu.usfx.biblioteca.legado.Prestable
+bo.edu.usfx.biblioteca.legado.EjemplarFisico --|> bo.edu.usfx.biblioteca.legado.Renovable
+bo.edu.usfx.biblioteca.legado.EjemplarFisico --|> bo.edu.usfx.biblioteca.legado.Reservable
+bo.edu.usfx.biblioteca.legado.EjemplarFisico --|> bo.edu.usfx.biblioteca.legado.Restaurable
+bo.edu.usfx.biblioteca.legado.GestorBiblioteca ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.legado.GestorBiblioteca ..> java.time.temporal.ChronoUnit
+bo.edu.usfx.biblioteca.legado.GestorBiblioteca ..> java.util.ArrayList
+bo.edu.usfx.biblioteca.legado.GestorBiblioteca ..> java.util.List
+bo.edu.usfx.biblioteca.legado.LibroGeneral --|> bo.edu.usfx.biblioteca.legado.MaterialBiblioteca
+bo.edu.usfx.biblioteca.legado.LibroGeneral ..> java.lang.Override
+bo.edu.usfx.biblioteca.legado.LibroGeneral ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.legado.LibroReferencia --|> bo.edu.usfx.biblioteca.legado.MaterialBiblioteca
+bo.edu.usfx.biblioteca.legado.LibroReferencia ..> java.lang.Override
+bo.edu.usfx.biblioteca.legado.LibroReferencia ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.legado.Prestamo ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.legado.Revista --|> bo.edu.usfx.biblioteca.legado.MaterialBiblioteca
+bo.edu.usfx.biblioteca.legado.Revista ..> java.lang.Override
+bo.edu.usfx.biblioteca.legado.Revista ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.legado.ServidorCorreoSMTP ..> java.util.ArrayList
+bo.edu.usfx.biblioteca.legado.ServidorCorreoSMTP ..> java.util.List
+bo.edu.usfx.biblioteca.presentacion.ComprobantePrestamo ..> bo.edu.usfx.biblioteca.legado.Prestamo
+bo.edu.usfx.biblioteca.dominio.PoliticaPrestamo ..> bo.edu.usfx.biblioteca.legado.Libro
+bo.edu.usfx.biblioteca.dominio.PoliticaPrestamo ..> bo.edu.usfx.biblioteca.legado.Prestamo
+bo.edu.usfx.biblioteca.dominio.PoliticaPrestamo ..> bo.edu.usfx.biblioteca.legado.Usuario
+bo.edu.usfx.biblioteca.dominio.PoliticaPrestamo ..> java.math.BigDecimal
+bo.edu.usfx.biblioteca.dominio.PoliticaPrestamo ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.dominio.PoliticaPrestamo ..> java.util.List
+bo.edu.usfx.biblioteca.dominio.Prestable ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.dominio.Renovable ..> java.time.LocalDate
+bo.edu.usfx.biblioteca.dominio.RepositorioPrestamos ..> bo.edu.usfx.biblioteca.legado.Prestamo
+bo.edu.usfx.biblioteca.dominio.RepositorioPrestamos ..> bo.edu.usfx.biblioteca.legado.Usuario
+bo.edu.usfx.biblioteca.dominio.RepositorioPrestamos ..> java.util.List
+@enduml
