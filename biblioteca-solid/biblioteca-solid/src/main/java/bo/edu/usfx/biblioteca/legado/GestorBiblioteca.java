@@ -25,14 +25,17 @@ import java.util.List;
 public class GestorBiblioteca {
 
     /* El modulo de alto nivel CONSTRUYE sus propios detalles de bajo nivel. */
-    private final ConexionMySQL conexion =
-            new ConexionMySQL("jdbc:mysql://10.0.0.7:3306/biblioteca", "root", "usfx2026");
-
-    private final ServidorCorreoSMTP correo =
-            new ServidorCorreoSMTP("smtp.usfx.bo", 587);
-
+   private final ConexionMySQL conexion;
+    private final ServidorCorreoSMTP correo;
+    
+    // La lista se puede quedar con su "new" porque es solo una estructura de datos nativa de Java
     private final List<Prestamo> prestamos = new ArrayList<>();
 
+    // 2. Creamos el constructor que recibe las dependencias listas para usarse
+    public GestorBiblioteca(ConexionMySQL conexion, ServidorCorreoSMTP correo) {
+        this.conexion = conexion;
+        this.correo = correo;
+    }
     // -----------------------------------------------------------------
     // 1. REGISTRAR UN PRESTAMO
     // -----------------------------------------------------------------
