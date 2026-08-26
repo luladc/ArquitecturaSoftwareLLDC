@@ -1,5 +1,7 @@
 package bo.edu.usfx.biblioteca.legado;
 
+import bo.edu.usfx.biblioteca.dominio.Material;
+import bo.edu.usfx.biblioteca.dominio.Prestable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,21 +18,12 @@ public class CatalogoBiblioteca {
         materiales.add(material);
     }
 
-    /** Presta todo lo prestable... comprobando el tipo a mano. */
     public List<String> prestarTodo(LocalDate hoy) {
-        List<String> comprobantes = new ArrayList<>();
-        for (MaterialBiblioteca m : materiales) {
-            // OLOR: comprobacion de tipo. Cada material nuevo obliga a volver aqui.
-            if (m instanceof LibroReferencia) {
-                continue;
-            }
-            try {
-                comprobantes.add(m.getTitulo() + " -> " + m.prestar(hoy));
-            } catch (UnsupportedOperationException e) {
-                // "por si acaso": la red de seguridad que delata el mal diseno
-            }
-        }
-        return comprobantes;
+        return materiales.stream()
+                .filter(Prestable.class::isInstance)
+                .map(Prestable.class::cast)
+                .map(p -> ((Material) p).titulo() + " -> " + p.prestar(hoy))
+                .toList();
     }
 
     public List<MaterialBiblioteca> getMateriales() { return materiales; }

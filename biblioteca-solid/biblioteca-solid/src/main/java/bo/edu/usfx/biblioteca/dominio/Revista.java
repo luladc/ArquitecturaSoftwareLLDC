@@ -1,0 +1,6 @@
+package bo.edu.usfx.biblioteca.dominio;
+import java.time.LocalDate;
+
+public record Revista(String signatura, String titulo) implements Material, Prestable {
+    public LocalDate prestar(LocalDate hoy) { return hoy.plusDays(2); }
+}
