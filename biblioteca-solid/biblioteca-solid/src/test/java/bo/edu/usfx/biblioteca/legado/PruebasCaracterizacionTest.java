@@ -1,5 +1,8 @@
 package bo.edu.usfx.biblioteca.legado;
 
+import bo.edu.usfx.biblioteca.dominio.Libro;
+import bo.edu.usfx.biblioteca.dominio.Prestamo;
+import bo.edu.usfx.biblioteca.dominio.Usuario;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

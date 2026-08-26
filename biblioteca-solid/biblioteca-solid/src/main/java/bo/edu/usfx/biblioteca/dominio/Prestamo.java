@@ -1,5 +1,6 @@
-package bo.edu.usfx.biblioteca.legado;
+package bo.edu.usfx.biblioteca.dominio;
 
+import bo.edu.usfx.biblioteca.dominio.Usuario;
 import java.time.LocalDate;
 
 /** Registro de un prestamo. */

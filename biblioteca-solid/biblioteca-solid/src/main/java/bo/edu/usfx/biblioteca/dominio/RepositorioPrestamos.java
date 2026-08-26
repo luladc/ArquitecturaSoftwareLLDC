@@ -1,8 +1,6 @@
 
 package bo.edu.usfx.biblioteca.dominio;
 
-import bo.edu.usfx.biblioteca.legado.Prestamo;
-import bo.edu.usfx.biblioteca.legado.Usuario;
 import java.util.List;
 /**
  *

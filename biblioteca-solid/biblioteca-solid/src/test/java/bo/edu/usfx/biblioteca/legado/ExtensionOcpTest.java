@@ -1,6 +1,6 @@
 package bo.edu.usfx.biblioteca.legado;
 
-import bo.edu.usfx.biblioteca.legado.Usuario;
+import bo.edu.usfx.biblioteca.dominio.Usuario;
 // ¡ESTA ES LA LÍNEA QUE FALTABA! Importamos todo lo del paquete dominio
 import bo.edu.usfx.biblioteca.dominio.*; 
 

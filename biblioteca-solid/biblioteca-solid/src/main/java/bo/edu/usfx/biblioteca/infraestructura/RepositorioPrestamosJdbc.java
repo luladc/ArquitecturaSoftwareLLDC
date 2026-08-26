@@ -1,8 +1,8 @@
 package bo.edu.usfx.biblioteca.infraestructura;
 
 import bo.edu.usfx.biblioteca.dominio.RepositorioPrestamos;
-import bo.edu.usfx.biblioteca.legado.Prestamo;
-import bo.edu.usfx.biblioteca.legado.Usuario;
+import bo.edu.usfx.biblioteca.dominio.Prestamo;
+import bo.edu.usfx.biblioteca.dominio.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,6 +1,6 @@
 
 package bo.edu.usfx.biblioteca.presentacion;
-import bo.edu.usfx.biblioteca.legado.Prestamo;
+import bo.edu.usfx.biblioteca.dominio.Prestamo;
 /**
  *
  * @author LLDC

@@ -1,8 +1,5 @@
 package bo.edu.usfx.biblioteca.dominio;
 
-import bo.edu.usfx.biblioteca.legado.Libro;
-import bo.edu.usfx.biblioteca.legado.Prestamo;
-import bo.edu.usfx.biblioteca.legado.Usuario;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;

@@ -1,7 +1,6 @@
 
 package bo.edu.usfx.biblioteca.dominio;
 
-import bo.edu.usfx.biblioteca.legado.Usuario;
 import java.math.BigDecimal;
 /**
  *

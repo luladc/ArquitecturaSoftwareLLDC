@@ -1,5 +1,8 @@
 package bo.edu.usfx.biblioteca.aplicacion;
 
+import bo.edu.usfx.biblioteca.dominio.Libro;
+import bo.edu.usfx.biblioteca.dominio.Prestamo;
+import bo.edu.usfx.biblioteca.dominio.Usuario;
 import bo.edu.usfx.biblioteca.dominio.*;
 import bo.edu.usfx.biblioteca.legado.*; 
 import java.time.LocalDate;
