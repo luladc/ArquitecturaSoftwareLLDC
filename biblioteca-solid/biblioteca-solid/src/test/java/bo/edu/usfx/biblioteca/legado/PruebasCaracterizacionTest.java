@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import bo.edu.usfx.biblioteca.presentacion.ComprobantePrestamo;
 
 import java.time.LocalDate;
 
@@ -41,9 +42,10 @@ class PruebasCaracterizacionTest {
     @Test
     @DisplayName("el comprobante conserva su formato exacto")
     void formatoDelComprobante() {
-        GestorBiblioteca gestor = new GestorBiblioteca();
-
-        String comprobante = gestor.registrarPrestamo(estudiante(), libro(), HOY);
+        Prestamo prestamo = new Prestamo(estudiante(), libro(), HOY, LocalDate.of(2026, 9, 1));
+        
+        ComprobantePrestamo generador = new ComprobantePrestamo();
+        String comprobante = generador.imprimir(prestamo);
 
         assertThat(comprobante).isEqualTo(
                   "=== BIBLIOTECA USFX ===\n"
