@@ -43,6 +43,6 @@ class ReglasDisenoTest {
    @ArchTest
     static final ArchRule interfacesDePuertosTienenNombresClaros = classes()
             .that().resideInAPackage("..dominio..")
-            .and().haveSimpleNameStartingWith("Repositorio") // ¡Aquí está la magia!
+            .and().haveSimpleNameStartingWith("Repositorio") 
             .should().beInterfaces();
 }
