@@ -8,13 +8,12 @@ package com.fig.practica2;
  *
  * @author LLDC
  */
-// --- Archivo: Main.java ---
 import java.util.Scanner;
 
 public class Practica2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Zoologico zoo = new Zoologico("EcoZoo", "Av. Principal 123", "777-123456");
+        Zoologico zoo = new Zoologico("ZooBol", "Av. Jaime", "7770252");
         
         int opcion = 0;
 
@@ -144,7 +143,6 @@ public class Practica2 {
         scanner.close();
     }
 
-    // Método auxiliar para crear la jaula e interactuar con el usuario sin repetir código
     private static Jaula crearJaula(Scanner scanner, Animal animal) {
         System.out.print("Alto de la jaula (m): ");
         double alto = Double.parseDouble(scanner.nextLine());
