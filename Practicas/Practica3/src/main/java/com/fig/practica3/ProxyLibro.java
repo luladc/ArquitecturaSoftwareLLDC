@@ -20,7 +20,7 @@ public class ProxyLibro implements Libro {
 
     @Override
     public void leer() {
-        System.out.println("Verificando credenciales de: " + usuarioLogueado.getUsername() + "...");
+        System.out.println("Verificando permisos de: " + usuarioLogueado.getUsername() + "...");
         
         if ("clave123".equals(usuarioLogueado.getPassword())) {
             System.out.println("Acceso concedido.");

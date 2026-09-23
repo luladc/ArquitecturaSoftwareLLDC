@@ -37,11 +37,10 @@ public class SistemaVentasFacade {
         
         ventaActual.mostrarRecibo();
         
-        // Delegamos la creación del pago a la Fábrica
         MetodoPago metodoPago = PagoFactory.crearMetodoPago(opcionPago);
         metodoPago.procesarPago(ventaActual.calcularTotal());
         
         System.out.println("Venta finalizada con éxito.");
-        ventaActual = null; // Reiniciamos para la siguiente operación
+        ventaActual = null; 
     }
 }

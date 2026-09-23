@@ -8,7 +8,6 @@ package SegundoEjercicio;
  *
  * @author LLDC
  */
-// --- Main.java (Menú de Consola) ---
 import java.util.Scanner;
 
 public class Main {
@@ -16,7 +15,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         SistemaVentasFacade sistema = new SistemaVentasFacade();
         
-        // Iniciamos una venta por defecto
         sistema.iniciarVenta("Cliente Mostrador", "09/09/2026", "NIT", "1234567015");
         
         int opcion = 0;
